@@ -1,4 +1,15 @@
 import { Component } from '@angular/core';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+
+const todoList = [
+  {title: 'install NodeJS'},
+  {title: 'install Angular CLI'},
+  {title: 'create new app'},
+  {title: 'serve app'},
+  {title: 'develop app'},
+  {title: 'deploy app'},
+];
+
 
 @Component({
   selector: 'todo-root',
@@ -6,5 +17,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'todo';
+  public todoList$ : BehaviorSubject< any[]> = new BehaviorSubject< any[]>( todoList);
+
 }
