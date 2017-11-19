@@ -34,5 +34,6 @@ export class InputComponent implements OnInit, OnChanges {
 
   public changeTitle(newTitle: string): void {
     this.title$.next(newTitle);
+    this.onTitleChanged.emit(newTitle);
   }
 }

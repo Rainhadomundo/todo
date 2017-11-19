@@ -19,4 +19,11 @@ const todoList = [
 export class AppComponent {
   public todoList$ : BehaviorSubject< any[]> = new BehaviorSubject< any[]>( todoList);
 
+   public onItemChanged(newTitle : string, index: number){
+     const list = this.todoList$.value;
+     list[index].title = newTitle;
+     this.todoList$.next(list);
+     console.debug('new list state', list);
+   }
+
 }

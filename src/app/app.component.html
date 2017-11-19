@@ -1,2 +1,2 @@
-<todo-input *ngFor="let item of todoList$ | async" [title]='item.title'>
+<todo-input *ngFor="let item of todoList$ | async as items; index as idx" [title]='item.title' (onTitleChanged)='onItemChanged($event, idx)'>
 </todo-input>
