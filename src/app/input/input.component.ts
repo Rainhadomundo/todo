@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from "rxjs";
+import { Title } from '@angular/platform-browser/src/browser/title';
 
 @Component({
   selector: 'todo-input',
@@ -8,11 +9,15 @@ import { BehaviorSubject } from "rxjs";
 })
 export class InputComponent implements OnInit {
 
-  public title : BehaviorSubject<string> = new BehaviorSubject("Hello Angular");
+  public title$: BehaviorSubject<string> = new BehaviorSubject("Hello Angular");
 
   constructor() { }
 
   ngOnInit() {
   }
 
+
+  public changeTitle(newTitle: string): void {
+    this.title$.next(newTitle);
+  }
 }

@@ -1,3 +1,2 @@
-<input>
-<button>Save</button>
-<p>The title is: {{ title | async }}</p>  
+<input #title [value]='title$ | async' (keyup)="changeTitle(title.value)">
+<p>The title is: {{ title$ | async }}</p>  
