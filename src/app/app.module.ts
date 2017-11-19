@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { InputComponent } from './input/input.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { InputComponent } from './input/input.component';
     InputComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
